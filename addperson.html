@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Person</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="renderer.js"></script>
+</head>
+<body>
+    <div class="card center">
+        <h2>Add Person</h2>
+        <input id="name" placeholder="Name">
+        <select id="part">
+            <option>A</option><option>B</option><option>C</option><option>D</option>
+        </select>
+        <input id="count" type="number" placeholder="Total Codes">
+        <input id="date" type="date">
+        <button onclick="addPerson()">Add</button>
+        <button onclick="location.href='residents.html'">Return Residents</button>
+    </div>
+    <script>
+        function addPerson() {
+            const name = document.getElementById('name').value;
+            const part = document.getElementById('part').value;
+            const totalCodes = parseInt(document.getElementById('count').value);
+            const lastDate = document.getElementById('date').value;
+            if (!name || !totalCodes || !lastDate) { alert('Please fill all fields'); return; }
+            window.addPersonForm(name, part, totalCodes, lastDate);
+        }
+    </script>
+    <footer>Developed By Osman</footer>
+</body>
+</html>

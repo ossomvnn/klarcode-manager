@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+     <style>
+         button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background-color: #3399ff;
+            color: white;
+        }
+     </style>
+<head>
+    <meta charset="UTF-8">
+    <title>Code vergeben</title>
+    <style>
+        body { font-family: Arial; background-color: #e0f0ff; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+        input, select, button { margin: 10px; padding: 10px; font-size: 16px; font-weight: bold; border-radius: 8px; }
+        button { width: 200px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Code vergeben</h1>
+    <input id="nameInput" placeholder="Name">
+    <select id="partSelect">
+        <option value="">Welche Abteilung</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <input id="countInput" type="number" placeholder="Anzahl Codes">
+    <button onclick="giveCodeForm()">Code vergeben</button>
+    <button onclick="window.location.href='home.html'">Zurück zur Startseite</button>
+
+<p id="message" style="text-align:center; font-weight:bold;"></p>
+
+
+    <script src="renderer.js"></script>
+</body>
+</html>
