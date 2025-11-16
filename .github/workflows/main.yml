@@ -1,0 +1,35 @@
+name: Build Windows EXE
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # 1️⃣ Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4️⃣ Build Windows EXE (without publishing)
+      - name: Build Windows EXE
+        run: npm run build-win -- --publish=never
+
+      # 5️⃣ Upload the built EXE
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: KlarCode-Windows
+          path: dist/*.exe
